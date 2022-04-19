@@ -149,8 +149,10 @@ async function fetchWithRetry(url)  {
 
 function generateImages(editionsList){
     jsonurl = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json \n'
-   // console.log(editionsList)
-    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', jsonurl);
-   // statusText.innerText = imageurl;
-   // return imageurl
+    // console.log(editionsList)
+    var mydata = JSON.parse(jsonurl);
+
+    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', mydata[0].image);
+    // statusText.innerText = imageurl;
+    // return imageurl
 }
