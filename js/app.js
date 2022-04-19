@@ -61,8 +61,10 @@ const checkOwner = async (account) => {
     isOwner = !isOwner ? data.isOwner : isOwner;
     updateStatusText(isOwner, false)
     //console.log(data.editions)
+
     editions = [...data.editions]
-    editionsImages.innerText = editions;
+    generateImages(editions);
+
     let nextPage = data.next_page
 
     while(nextPage) {
@@ -74,7 +76,6 @@ const checkOwner = async (account) => {
      
       if(data.editions){
         editions = [...editions, ...data.editions]
-        console.log('here')
       }
       nextPage = data.next_page
     }
@@ -138,5 +139,11 @@ async function fetchWithRetry(url)  {
       }); 
     }
     return fetch_retry(url);
+  });
+}
+
+function generateImages(editions){
+  array.forEach(editions => {
+    console.log(editions)
   });
 }
