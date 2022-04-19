@@ -147,34 +147,13 @@ async function fetchWithRetry(url)  {
   });
 }
 
-function generateImages(editionsList){
-  getJSON('https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json',
-  function(err, data) {
-    if (err !== null) {
-      alert('Something went wrong: ' + err);
-    } else {
-      alert('Your query count: ' + data.query.count);
-    }
-  });
-    // console.log(editionsList)
-    //var mydata = JSON.parse(jsonurl);
-
-    //document.getElementById('owner-editions').insertAdjacentHTML('beforeend', data[0].image);
-    // statusText.innerText = imageurl;
-    // return imageurl
+async function generateImages(editionsList){
+  let url = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json';
+  let obj = null;
+  try {
+      obj = await (await fetch(url)).json();
+  } catch(e) {
+      console.log('error');
+  }
+  console.log(obj);
 }
-
-var getJSON = function(url, callback) {
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', url, true);
-  xhr.responseType = 'json';
-  xhr.onload = function() {
-    var status = xhr.status;
-    if (status === 200) {
-      callback(null, xhr.response);
-    } else {
-      callback(status, xhr.response);
-    }
-  };
-  xhr.send();
-};
