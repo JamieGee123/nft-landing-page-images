@@ -63,7 +63,7 @@ const checkOwner = async (account) => {
     //console.log(data.editions)
 
     editions = [...data.editions]
-    generateImages(editionsList);
+   // generateImages(editionsList);
 
     let nextPage = data.next_page
 
