@@ -63,7 +63,8 @@ const checkOwner = async (account) => {
     //console.log(data.editions)
 
     editions = [...data.editions]
-    generateImages(editions);
+    
+    editions.forEach(generateImages);
 
     let nextPage = data.next_page
 
@@ -143,9 +144,5 @@ async function fetchWithRetry(url)  {
 }
 
 function generateImages(editionsList){
-  editionsList=[]
-
-  array.forEach(editionsList => {
     console.log(editionsList)
-  });
 }
