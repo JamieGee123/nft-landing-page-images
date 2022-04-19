@@ -159,7 +159,7 @@ function generateImages(editionsList){
     // console.log(editionsList)
     //var mydata = JSON.parse(jsonurl);
 
-    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', data[0].image);
+    //document.getElementById('owner-editions').insertAdjacentHTML('beforeend', data[0].image);
     // statusText.innerText = imageurl;
     // return imageurl
 }
