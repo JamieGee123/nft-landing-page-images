@@ -148,7 +148,7 @@ async function fetchWithRetry(url)  {
 }
 
 function generateImages(editionsList){
-  mydata = getJSON('opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json',
+  mydata = getJSON('https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json',
   function(err, data) {
     if (err !== null) {
       alert('Something went wrong: ' + err);
