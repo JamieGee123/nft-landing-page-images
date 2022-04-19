@@ -151,7 +151,7 @@ function generateImages(editionsList){
     imageurl = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json'
    // console.log(editionsList)
     const statusText = document.querySelector('.owner-editions');
-    statusText.innerHTML = '<image src="' + imageurl + ' alt="" >';
+    statusText.innerHTML = '<image src="' + imageurl + ' >';
 
    // return imageurl
 }
