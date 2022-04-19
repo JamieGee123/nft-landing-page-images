@@ -150,8 +150,8 @@ async function fetchWithRetry(url)  {
 function generateImages(editionsList){
     imageurl = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json'
    // console.log(editionsList)
-    const statusText = document.querySelector('.owner-editions');
-    statusText.innerText = imageurl;
+    document.getElementsByID('owner-editions').insertAdjacentHTML('beforeend', imageurl);
+   // statusText.innerText = imageurl;
 
    // return imageurl
 }
