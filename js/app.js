@@ -155,5 +155,6 @@ async function generateImages(editionsList){
   } catch(e) {
       console.log('error');
   }
+  console.log(obj);
   document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n');
 }
