@@ -148,7 +148,7 @@ async function fetchWithRetry(url)  {
 }
 
 function generateImages(editionsList){
-  mydata = getJSON('https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json',
+  getJSON('https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json',
   function(err, data) {
     if (err !== null) {
       alert('Something went wrong: ' + err);
@@ -159,7 +159,7 @@ function generateImages(editionsList){
     // console.log(editionsList)
     //var mydata = JSON.parse(jsonurl);
 
-    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', mydata[0].image);
+    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', data[0].image);
     // statusText.innerText = imageurl;
     // return imageurl
 }
