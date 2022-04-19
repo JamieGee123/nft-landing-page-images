@@ -66,6 +66,10 @@ const checkOwner = async (account) => {
     
     editions.forEach(generateImages);
 
+
+
+
+
     let nextPage = data.next_page
 
     while(nextPage) {
@@ -144,5 +148,10 @@ async function fetchWithRetry(url)  {
 }
 
 function generateImages(editionsList){
-    console.log(editionsList)
+    imageurl = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json'
+   // console.log(editionsList)
+    const statusText = document.querySelector('.owner-editions');
+    statusText.innerHTML = '<image src="' + imageurl + ' alt="" >';
+
+   // return imageurl
 }
