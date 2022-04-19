@@ -54,7 +54,6 @@ const checkOwner = async (account) => {
   if(account) {
     let isOwner = false;
     let page = 1
-    editionsList=[]
     const editionsImages = document.querySelector('.owner-editions');
 
     data = await fetchWithRetry(`/.netlify/functions/isowner/?wallet=${account}&page=${page}`);
@@ -144,6 +143,8 @@ async function fetchWithRetry(url)  {
 }
 
 function generateImages(editionsList){
+  editionsList=[]
+
   array.forEach(editionsList => {
     console.log(editionsList)
   });
