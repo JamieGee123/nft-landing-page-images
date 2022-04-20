@@ -159,9 +159,9 @@ async function generateImages(editionsList){
   //document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n');
   if (Object.is(editionsList.length - 1)) {
     // execute last item logic
-    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#${editionsList}');
+    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#'+editionsList);
     //console.log(`Last callback call at index ${key} with value ${val}` ); 
   }else{
-    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#${editionsList},');
+    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#'+editionsList+',');
   }
 }
