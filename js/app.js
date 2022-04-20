@@ -147,7 +147,7 @@ async function fetchWithRetry(url)  {
   });
 }
 
-async function generateImages(edition){
+async function generateImages(edition,index,arr){
   //let url = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json';
   //let obj = null;
  // try {
@@ -157,7 +157,7 @@ async function generateImages(edition){
   //}
   console.log(edition,index);
   //document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n');
-  if (Object.is(editionsList.length - 1)) {
+  if (Object.is(arr.length - 1)) {
     // execute last item logic
     document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#'+edition);
     //console.log(`Last callback call at index ${key} with value ${val}` ); 
