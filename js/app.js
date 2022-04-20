@@ -155,7 +155,7 @@ async function generateImages(edition,index,arr){
   //} catch(e) {
   //    console.log('error');
   //}
-  console.log(edition,index);
+  console.log(edition,index,arr.length);
   //document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n');
   if (Object.is(arr.length - 1)) {
     // execute last item logic
