@@ -157,5 +157,11 @@ async function generateImages(editionsList){
   //}
   //console.log(obj);
   //document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n');
-  document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#' + editionsList + ', \n');
+  if (Object.is(editionsList.length - 1)) {
+    // execute last item logic
+    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#${editionsList}');
+    //console.log(`Last callback call at index ${key} with value ${val}` ); 
+  }else{
+    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#${editionsList},');
+  }
 }
