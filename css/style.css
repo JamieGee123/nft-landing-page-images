@@ -9,6 +9,7 @@
   --font-secondary: 'Arvo', serif;
   --font-code: 'Roboto', monospace;
   --bg-color: #000000;
+  --content-bgcolor: #ffffff;
   --font-color: #ffffff;
   --btn-bg-color: #2f80f8;
   --accent-color: #000000;
@@ -36,6 +37,8 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 1rem 2rem;
+  background-color: var(--content-bgcolor);
+  color: #000000;
 }
 
 /* HEADER */
