@@ -151,8 +151,10 @@ async function generateImages(editionsList){
   let url = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json';
   let obj = null;
   try {
-      obj = await (await fetch(url)).json().then(document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n'));
+      obj = await (await fetch(url)).json().then(document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n'))
   } catch(e) {
       console.log('error');
   }
+  //console.log(obj);
+ // document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n');
 }
