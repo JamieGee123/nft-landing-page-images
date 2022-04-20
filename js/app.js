@@ -55,21 +55,11 @@ const checkOwner = async (account) => {
     let isOwner = false;
     let page = 1
     const editionsImages = document.querySelector('.owner-editions');
-
     data = await fetchWithRetry(`/.netlify/functions/isowner/?wallet=${account}&page=${page}`);
-    
     isOwner = !isOwner ? data.isOwner : isOwner;
     updateStatusText(isOwner, false)
-    //console.log(data.editions)
-
     editions = [...data.editions]
-    
     editions.forEach(generateImages);
-
-
-
-
-
     let nextPage = data.next_page
 
     while(nextPage) {
@@ -99,7 +89,6 @@ function updateStatusText(isOwner, checking) {
   } else {
     if(isOwner) {
       statusText.innerText = `You own ${editions.length} ${COLLECTION_NAME}!!`;
-      //checking == false;
     } else {
       statusText.innerText = `You don't own any ${COLLECTION_NAME}`;
     }
@@ -148,19 +137,8 @@ async function fetchWithRetry(url)  {
 }
 
 async function generateImages(edition,index,arr){
-  //let url = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json';
-  //let obj = null;
- // try {
-  //    obj = await (await fetch(url)).json();
-  //} catch(e) {
-  //    console.log('error');
-  //}
-  console.log(edition,index,arr.length);
-  //document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n');
   if (index == arr.length - 1) {
-    // execute last item logic
     document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#'+edition);
-    //console.log(`Last callback call at index ${key} with value ${val}` ); 
   }else{
     document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#'+edition+',');
   }
