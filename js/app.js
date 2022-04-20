@@ -157,5 +157,5 @@ async function generateImages(editionsList){
   //}
   //console.log(obj);
   //document.getElementById('owner-editions').insertAdjacentHTML('beforeend', obj.image + '\n');
-  document.getElementById('owner-editions').insertAdjacentHTML('beforeend', editionsList + '\n');
+  document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#' + editionsList + ', \n');
 }
