@@ -140,6 +140,6 @@ async function generateImages(edition,index,arr){
   if (index == arr.length - 1) {
     document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#'+edition);
   }else{
-    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#'+edition+',');
+    document.getElementById('owner-editions').insertAdjacentHTML('beforeend', '#'+edition+', ');
   }
 }
