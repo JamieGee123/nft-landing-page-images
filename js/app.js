@@ -151,7 +151,7 @@ async function generateImages(editionsList){
   let url = 'https://opensea.mypinata.cloud/ipfs/bafybeic7euhz6awhrg4ill6zvvvryg5cg6mjirqhjbhyvhznlv2uvrbq6a/' + editionsList + '.json';
   let obj = null;
   try {
-      obj = await (fetch(url)).json();
+      obj = await fetch(url).json();
   } catch(e) {
       console.log('error');
   }
